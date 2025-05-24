@@ -1,26 +1,6 @@
 {
-    "Tiny House I": {
-        "1": "./Data/TinyHouse1/1.png",
-        "2": "./Data/TinyHouse1/2.png",
-        "3": "./Data/TinyHouse1/3.png",
-        "4": "./Data/TinyHouse1/4.png"
-    },
-    "Tiny House II": {
-        "1": "./Data/TinyHouse2/1.png",
-        "2": "./Data/TinyHouse2/2.png",
-        "3": "./Data/TinyHouse2/3.png",
-        "4": "./Data/TinyHouse2/4.png"
-    },
-    "Tiny House  III": {
-        "1": "./Data/TinyHouse3/1.png",
-        "2": "./Data/TinyHouse3/2.png",
-        "3": "./Data/TinyHouse3/3.png",
-        "4": "./Data/TinyHouse3/4.png"
-    },
-    "Tiny House IV": {
-        "1": "./Data/TinyHouse4/1.png",
-        "2": "./Data/TinyHouse4/2.png",
-        "3": "./Data/TinyHouse4/3.png",
-        "4": "./Data/TinyHouse4/4.png"
-    }
+    "Tiny House I": "./Data/TinyHouse1/TinyHouse_1.pdf",
+    "Tiny House II": "./Data/TinyHouse2/TinyHouse_2.pdf",
+    "Tiny House III": "./Data/TinyHouse3/TinyHouse_3.pdf",
+    "Tiny House IV": "./Data/TinyHouse4/TinyHouse_4.pdf"
 }

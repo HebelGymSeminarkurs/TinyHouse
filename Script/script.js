@@ -35,58 +35,21 @@ body.addEventListener("click", (e) => {
         nav.classList.remove("active");
     }
 });
-
 // Fetch JSON data and create buttons
-fetch('./Config/TinyHouse.json') // Replace with the correct path to your JSON file
+fetch('./Config/TinyHouse.json')
     .then(response => response.json())
     .then(data => {
         const fortschrittButtons = document.getElementById('fortschritt-buttons');
-        const sliderModal = document.getElementById('slider-modal');
-        const sliderImage = document.getElementById('slider-image');
-        const prevButton = document.getElementById('prev-button');
-        const nextButton = document.getElementById('next-button');
-        const closeButton = document.querySelector('.close');
-
-        let currentImages = [];
-        let currentIndex = 0;
 
         // Create buttons for each TinyHouse
         for (const key in data) {
             const button = document.createElement('button');
             button.textContent = key;
-            button.addEventListener('click', () => openSlider(data[key]));
+            button.addEventListener('click', () => {
+                // Open the PDF in a new tab
+                window.open(data[key], '_blank');
+            });
             fortschrittButtons.appendChild(button);
         }
-
-        function openSlider(images) {
-            currentImages = Object.values(images);
-            currentIndex = 0;
-            sliderImage.src = currentImages[currentIndex];
-            sliderModal.style.display = 'block';
-        }
-
-        closeButton.addEventListener('click', () => {
-            sliderModal.style.display = 'none';
-        });
-
-        prevButton.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                sliderImage.src = currentImages[currentIndex];
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (currentIndex < currentImages.length - 1) {
-                currentIndex++;
-                sliderImage.src = currentImages[currentIndex];
-            }
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === sliderModal) {
-                sliderModal.style.display = 'none';
-            }
-        });
     })
     .catch(error => console.error('Error fetching JSON:', error));
