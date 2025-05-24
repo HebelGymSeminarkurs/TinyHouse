@@ -1,78 +1,112 @@
-/* ===== Google Font Import - Poppins ===== 
-@import url('../Font/googleapis.css');
-*/
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ===== Base Styles ===== */
+:root {
+    /* Color Variables */
+    --body-color: #E4E9F7;
+    --nav-color: #112836;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --text-dark: #333;
+    --text-light: #FFF;
+    --text-muted: #CCC;
+    --accent-color: #4fb8e6;
+    --error-color: #eb1a1a;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    
+    /* Font Sizes */
+    --text-xs: 0.75rem;    /* 12px */
+    --text-sm: 0.875rem;   /* 14px */
+    --text-base: 1rem;     /* 16px */
+    --text-lg: 1.125rem;   /* 18px */
+    --text-xl: 1.25rem;    /* 20px */
+    --text-2xl: 1.5rem;    /* 24px */
+    --text-3xl: 1.875rem;  /* 30px */
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.4s ease;
+}
+
+/* Dark Mode Colors */
+body.dark {
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: var(--text-muted);
+    --text-dark: #EEE;
+    --text-light: #222;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    transition: all 0.4s ease;
-    ;
+    transition: color var(--transition-normal), background-color var(--transition-normal);
 }
 
-  
-/* ===== Colours ===== */
-:root {
-    --body-color: #E4E9F7;
-    --nav-color: #112836;
-    --side-nav: #010718;
-    --text-color: #FFF;
-}
-
-body{
+/* ===== Layout Styles ===== */
+body {
     background-color: var(--body-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-  }
-
-body.dark {
-    --body-color: #18191A;
-    --nav-color: #242526;
-    --side-nav: #242526;
-    --text-color: #CCC;
+    display: none;
 }
 
+/* Navigation */
 nav {
     position: fixed;
     top: 0;
     left: 0;
-    height: 70px;
+    height: 4.375rem; /* 70px */
     width: 100%;
     background-color: var(--nav-color);
     z-index: 100;
+    transition: background-color var(--transition-slow);
 }
 
 body.dark nav {
     border: 1px solid #393838;
-
 }
 
 nav .nav-bar {
     position: relative;
     height: 100%;
-    max-width: 1000px;
+    max-width: 62.5rem; /* 1000px */
     width: 100%;
-    background-color: var(--nav-color);
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 var(--space-lg);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* Navigation Elements */
 nav .nav-bar .sidebarOpen {
     color: var(--text-color);
-    font-size: 25px;
-    padding: 5px;
+    font-size: var(--text-2xl);
+    padding: var(--space-xs);
     cursor: pointer;
     display: none;
 }
 
 nav .nav-bar .logo a {
-    font-size: 25px;
+    font-size: var(--text-2xl);
     font-weight: 500;
     color: var(--text-color);
     text-decoration: none;
@@ -88,17 +122,17 @@ nav .nav-bar .logo a {
 }
 
 .nav-bar .nav-links li {
-    margin: 0 5px;
+    margin: 0 var(--space-sm);
     list-style: none;
 }
 
 .nav-links li a {
     position: relative;
-    font-size: 17px;
+    font-size: var(--text-lg);
     font-weight: 400;
     color: var(--text-color);
     text-decoration: none;
-    padding: 10px;
+    padding: var(--space-sm);
 }
 
 .nav-links li a::before {
@@ -107,34 +141,34 @@ nav .nav-bar .logo a {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    height: 6px;
-    width: 6px;
+    height: 0.375rem; /* 6px */
+    width: 0.375rem;
     border-radius: 50%;
     background-color: var(--text-color);
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: opacity var(--transition-normal);
 }
 
 .nav-links li:hover a::before {
     opacity: 1;
 }
 
-.dark-light
-{
-    height: 40px;
-    width: 40px;
+/* Dark/Light Mode Toggle */
+.dark-light {
+    height: 2.5rem;
+    width: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 5px;
+    margin: 0 var(--space-sm);
 }
 
 .dark-light i {
     position: absolute;
     color: var(--text-color);
-    font-size: 22px;
+    font-size: var(--text-xl);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: opacity var(--transition-normal);
 }
 
 .dark-light i.sun {
@@ -152,59 +186,60 @@ nav .nav-bar .logo a {
     pointer-events: none;
 }
 
-
-
+/* Home Container */
 .home-container {
     position: relative;
-    width: 100%; /* Ensure the container takes the full width */
-    height: 100vh; /* Make the container full viewport height */
+    width: 100%;
+    height: 100vh;
 }
-  
+
 .home-container img {
     position: absolute;
-    top: 0; /* Align the image to the top */
-    width: 100%; /* Ensure the image takes the full width of the container */
-    height: 100%; /* Cover the full height of the container */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .text-overlay {
     position: absolute;
-    top: 50%; /* Move the element to the center vertically */
-    left: 50%; /* Move the element to the center horizontally */
-    transform: translate(-50%, -50%); /* Offset by half its own width and height */
-    width: 90%; /* Adjust the width of the text overlay */
-    max-width: 1200px; /* Limit the maximum width for better readability */
-    color: white; /* Text color */
-    font-size: 18px; /* Text size */
-    text-align: center; /* Center the text */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    padding: 20px; /* Add padding for better spacing */
-    border-radius: 10px; /* Optional: Add rounded corners */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 75rem; /* 1200px */
+    color: var(--text-light); /* Always use light text */
+    font-size: var(--text-lg);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    padding: var(--space-lg);
+    border-radius: 0.625rem; /* 10px */
+}
+
+body.dark .text-overlay {
+    color: white;
 }
 
 .text-overlay h1 {
-    font-size: 25px; /* Larger font size for the heading */
-    margin-bottom: 12px; /* Add space below the heading */
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-md);
 }
 
 .text-overlay p {
-    margin-bottom: 10px; /* Add space between paragraphs */
+    margin-bottom: var(--space-sm);
 }
 
-
-
-/*  Scroll Down Arrow */
+/* Scroll Down Arrow */
 .indicator {
-    position: absolute; /* Use absolute positioning */
-    bottom: 50px; /* Place it near the bottom */
-    left: 50%; /* Center it horizontally */
-    transform: translateX(-50%) rotate(45deg); /* Center the element and rotate */
-    width: 25px;
-    height: 25px;
-  }
-  
-  .indicator span {
+    position: absolute;
+    bottom: 3.125rem; /* 50px */
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 1.5625rem; /* 25px */
+    height: 1.5625rem;
+}
+
+.indicator span {
     position: absolute;
     left: 0;
     top: 0;
@@ -212,285 +247,237 @@ nav .nav-bar .logo a {
     height: 100%;
     box-sizing: border-box;
     border: none;
-    border-bottom: 3px solid #eb1a1a;
-    border-right: 3px solid #eb1a1a;
+    border-bottom: 3px solid var(--error-color);
+    border-right: 3px solid var(--error-color);
     animation: animate 1s linear infinite;
-  }
-  
-  .indicator span:nth-child(1) {
-    top: -30px;
-    left: -30px;
+}
+
+.indicator span:nth-child(1) {
+    top: -1.875rem; /* -30px */
+    left: -1.875rem;
     animation-delay: 0s;
-  }
-  
-  .indicator span:nth-child(2) {
-    top: -15px;
-    left: -15px;
+}
+
+.indicator span:nth-child(2) {
+    top: -0.9375rem; /* -15px */
+    left: -0.9375rem;
     animation-delay: 0.2s;
-  }
-  
-  .indicator span:nth-child(3) {
+}
+
+.indicator span:nth-child(3) {
     top: 0;
     left: 0;
     animation-delay: 0.4s;
-  }
-  
+}
 
-  
-  @keyframes animate {
+@keyframes animate {
     0% {
-      border-color: #eb1a1a;
-      transform: translate(0, 0);
+        border-color: var(--error-color);
+        transform: translate(0, 0);
     }
     20% {
-      border-color: #eb1a1a;
-      transform: translate(15px, 15px);
+        border-color: var(--error-color);
+        transform: translate(0.9375rem, 0.9375rem); /* 15px */
     }
     20.1%, 100% {
-      border-color: #eb1a1a;
+        border-color: var(--error-color);
     }
-  }
+}
 
-
-  .Aktuell {
+/* Aktuell Section */
+.Aktuell {
     max-width: 100%;
     height: 90vh;
-    padding: 20px;
+    padding: var(--space-lg);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .grid {
+}
+
+.Aktuell h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-xl);
+}
+
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: var(--space-md);
     height: 100%;
-  }
-  
-  .card {
-    background-color: #1e3a50;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    background-color: var(--nav-color);
+    border-radius: 0.5rem; /* 8px */
+    padding: var(--space-md);
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
     text-align: left;
-    color: white;
+    color: var(--text-light);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-  }
-  
-  .card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-  }
-  
-  .card p {
-    font-size: 0.95rem;
+    transition: transform var(--transition-normal), 
+                box-shadow var(--transition-normal), 
+                opacity var(--transition-normal);
+}
+
+.card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.card p {
+    font-size: var(--text-sm);
     line-height: 1.4;
-  }
-  
-  .icon {
-    font-size: 2rem;
-    color: #4fb8e6;
-    margin-bottom: 10px;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  .grid:hover .card {
-    opacity: 0.5; /* Dim all cards */
-  }
-  
-  .grid:hover .card:hover {
-    opacity: 1; /* Highlight hovered card */
-  }
+    color: var(--text-muted);
+}
 
+.icon {
+    font-size: var(--text-3xl);
+    color: var(--accent-color);
+    margin-bottom: var(--space-sm);
+}
 
+.card:hover {
+    transform: translateY(-0.3125rem); /* -5px */
+    box-shadow: 0 0.375rem 0.75rem var(--shadow-color);
+}
 
- /* ===== Slider Modal Styles ===== */
+.grid:hover .card {
+    opacity: 0.5;
+}
+
+.grid:hover .card:hover {
+    opacity: 1;
+}
+
+/* Modal Styles */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000; /* Ensure it's on top of everything */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
-  overflow: auto;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
 }
 
 .modal-content {
-  position: relative;
-  margin: 5% auto; /* Center the modal vertically */
-  padding: 20px;
-  max-width: 90%; /* Ensure the modal doesn't exceed 90% of the viewport width */
-  width: 90%; /* Allow the modal to take more width */
-  text-align: center;
-  background-color: var(--nav-color);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 5% auto;
+    padding: var(--space-lg);
+    max-width: 90%;
+    width: 90%;
+    text-align: center;
+    background-color: var(--nav-color);
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
 }
 
 .close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: var(--text-color);
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-lg);
+    color: var(--text-color);
+    font-size: var(--text-3xl);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-  color: #ff6b6b; /* Change color on hover */
-  text-decoration: none;
+    color: #ff6b6b;
+    text-decoration: none;
 }
 
 #slider-image {
-  max-width: 80%; /* Ensure the image takes 80% of the modal width */
-  max-height: 80vh; /* Ensure the image takes 80% of the viewport height */
-  border-radius: 8px;
-  object-fit: contain; /* Maintain aspect ratio */
-  display: block; /* Ensure proper spacing */
-  margin: 0 auto; /* Center the image horizontally */
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 0.5rem; /* 8px */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
-/* Navigation buttons */
+/* Navigation Buttons */
 #prev-button,
 #next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: var(--text-color);
-  border: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--text-lg);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color var(--transition-normal);
 }
 
 #prev-button:hover,
 #next-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 #prev-button {
-  left: 10px;
+    left: var(--space-sm);
 }
 
 #next-button {
-  right: 10px;
+    right: var(--space-sm);
 }
 
 /* Fortschritt Section */
 .fortschritt-container {
-  padding: 20px;
-  text-align: center;
-  background-color: var(--body-color);
-  position: relative; /* Ensure proper stacking context */
-  z-index: 1; /* Lower z-index if needed */
-  margin-top: 20px; /* Add spacing to avoid overlap */
+    padding: var(--space-lg);
+    text-align: center;
+    background-color: var(--body-color);
+    position: relative;
+    z-index: 1;
+    margin-top: var(--space-lg);
 }
 
 #fortschritt-buttons {
-  display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  gap: 15px; /* Add spacing between buttons */
-  align-items: stretch; /* Ensure buttons stretch to full width */
-  margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: stretch;
+    margin-top: var(--space-lg);
 }
 
 #fortschritt-buttons button {
-  background-color: var(--nav-color);
-  color: var(--text-color);
-  border: none;
-  padding: 15px 30px; /* Adjust padding for better spacing */
-  font-size: 18px; /* Adjust font size */
-  border-radius: 8px; /* Slightly larger border radius */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  width: 100%; /* Make buttons take the full width of the container */
-  text-align: center; /* Center the text inside the button */
+    background-color: var(--nav-color);
+    color: var(--text-color);
+    border: none;
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--text-lg);
+    border-radius: 0.5rem; /* 8px */
+    cursor: pointer;
+    transition: background-color var(--transition-normal), 
+                transform var(--transition-fast), 
+                box-shadow var(--transition-normal);
+    box-shadow: 0 0.25rem 0.375rem var(--shadow-color);
+    width: 100%;
+    text-align: center;
 }
 
 #fortschritt-buttons button:hover {
-  background-color: #1e3a50; /* Darker shade for hover effect */
-  transform: translateY(-2px); /* Slight lift effect on hover */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+    background-color: #1e3a50;
+    transform: translateY(-0.125rem); /* -2px */
+    box-shadow: 0 0.375rem 0.5rem var(--shadow-color);
 }
 
 #fortschritt-buttons button:active {
-  transform: translateY(0); /* Reset lift effect when clicked */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow when clicked */
+    transform: translateY(0);
+    box-shadow: 0 0.25rem 0.375rem var(--shadow-color);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 790px) {
+/* ===== Responsive Styles ===== */
+@media (max-width: 49.375rem) { /* 790px */
     nav .nav-bar .sidebarOpen {
         display: block;
     }
@@ -498,23 +485,24 @@ nav .nav-bar .logo a {
     .menu {
         position: fixed;
         height: 100%;
-        width: 320px;
+        width: 20rem; /* 320px */
         left: -100%;
         top: 0;
-        padding: 20px;
+        padding: var(--space-lg);
         background-color: var(--side-nav);
         z-index: 100;
-        transition: all 0.4s ease;
+        transition: transform var(--transition-slow);
     }
 
     nav.active .menu {
-        left: -0%;
+        transform: translateX(100%);
     }
 
     nav.active .nav-bar .navLogo a {
         opacity: 0;
-        transition: all 0.3s ease;
+        transition: opacity var(--transition-normal);
     }
+    
 
     .menu .logo-toggle {
         display: block;
@@ -526,28 +514,30 @@ nav .nav-bar .logo a {
 
     .logo-toggle .siderbarClose {
         color: var(--text-color);
-        font-size: 24px;
+        font-size: var(--text-2xl);
         cursor: pointer;
     }
 
     .nav-bar .nav-links {
         flex-direction: column;
-        padding-top: 30px;
+        padding-top: var(--space-xl);
     }
 
     .nav-links li a {
         display: block;
-        margin-top: 20px;
+        margin-top: var(--space-lg);
     }
- .grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    height: auto;
-  }
-  .card {
-    padding: 20px;
-  }
-  .fortschritt-container{
-    margin-top:60vh;
-  }
-
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* 250px */
+        height: auto;
+    }
+    
+    .card {
+        padding: var(--space-lg);
+    }
+    
+    .fortschritt-container {
+        margin-top: 60vh;
+    }
 }
