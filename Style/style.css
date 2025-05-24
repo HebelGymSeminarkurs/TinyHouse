@@ -16,13 +16,13 @@
     --shadow-color: rgba(0, 0, 0, 0.2);
     
     /* Font Sizes */
-    --text-xs: 0.75rem;    /* 12px */
-    --text-sm: 0.875rem;   /* 14px */
-    --text-base: 1rem;     /* 16px */
-    --text-lg: 1.125rem;   /* 18px */
-    --text-xl: 1.25rem;    /* 20px */
-    --text-2xl: 1.5rem;    /* 24px */
-    --text-3xl: 1.875rem;  /* 30px */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
     
     /* Spacing */
     --space-xs: 0.25rem;
@@ -73,7 +73,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    height: 4.375rem; /* 70px */
+    height: 4.375rem;
     width: 100%;
     background-color: var(--nav-color);
     z-index: 100;
@@ -87,7 +87,7 @@ body.dark nav {
 nav .nav-bar {
     position: relative;
     height: 100%;
-    max-width: 62.5rem; /* 1000px */
+    max-width: 80rem;
     width: 100%;
     margin: 0 auto;
     padding: 0 var(--space-lg);
@@ -141,7 +141,7 @@ nav .nav-bar .logo a {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    height: 0.375rem; /* 6px */
+    height: 0.375rem;
     width: 0.375rem;
     border-radius: 50%;
     background-color: var(--text-color);
@@ -152,6 +152,14 @@ nav .nav-bar .logo a {
 .nav-links li:hover a::before {
     opacity: 1;
 }
+
+/* Style for logo image to make it smaller */
+.navLogo img {
+    margin-top: 12px;
+    max-height: 70px; /* Adjust this value as needed */
+    width: auto;
+}
+
 
 /* Dark/Light Mode Toggle */
 .dark-light {
@@ -207,13 +215,13 @@ nav .nav-bar .logo a {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 75rem; /* 1200px */
-    color: var(--text-light); /* Always use light text */
+    max-width: 75rem;
+    color: var(--text-light);
     font-size: var(--text-lg);
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: var(--space-lg);
-    border-radius: 0.625rem; /* 10px */
+    border-radius: 0.625rem;
 }
 
 body.dark .text-overlay {
@@ -232,10 +240,10 @@ body.dark .text-overlay {
 /* Scroll Down Arrow */
 .indicator {
     position: absolute;
-    bottom: 3.125rem; /* 50px */
+    bottom: 3.125rem;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
-    width: 1.5625rem; /* 25px */
+    width: 1.5625rem;
     height: 1.5625rem;
 }
 
@@ -253,13 +261,13 @@ body.dark .text-overlay {
 }
 
 .indicator span:nth-child(1) {
-    top: -1.875rem; /* -30px */
+    top: -1.875rem;
     left: -1.875rem;
     animation-delay: 0s;
 }
 
 .indicator span:nth-child(2) {
-    top: -0.9375rem; /* -15px */
+    top: -0.9375rem;
     left: -0.9375rem;
     animation-delay: 0.2s;
 }
@@ -277,7 +285,7 @@ body.dark .text-overlay {
     }
     20% {
         border-color: var(--error-color);
-        transform: translate(0.9375rem, 0.9375rem); /* 15px */
+        transform: translate(0.9375rem, 0.9375rem);
     }
     20.1%, 100% {
         border-color: var(--error-color);
@@ -286,51 +294,42 @@ body.dark .text-overlay {
 
 /* Aktuell Section */
 .Aktuell {
-    max-width: 100%;
-    min-height: auto; /* Changed from fixed height */
-    height: auto; /* Let content determine height */
-    padding: var(--space-xl) var(--space-lg); /* More padding on top/bottom */
+    width: 100%;
+    padding: var(--space-xl) var(--space-lg);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 auto; /* Center the section */
 }
 
-/* Grid adjustments */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More responsive */
-    gap: var(--space-lg); /* Increased gap */
-    padding: var(--space-md); /* Added padding */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--space-md);
     width: 100%;
-    max-width: 1200px; /* Limit maximum width */
-    margin: 0 auto; /* Center the grid */
+    max-width: 1700px;
+    margin: 0 auto;
 }
 
-/* Card adjustments */
 .card {
     background-color: var(--nav-color);
     border-radius: 0.5rem;
-    padding: var(--space-lg); /* Increased padding */
+    padding: var(--space-lg);
     box-shadow: 0 4px 8px var(--shadow-color);
     text-align: left;
     color: var(--text-light);
     display: flex;
     flex-direction: column;
-    min-height: 200px; /* Minimum card height */
+    width: 100%;
     transition: all var(--transition-normal);
+    box-sizing: border-box;
 }
-
-
 
 .Aktuell h1 {
     font-size: var(--text-3xl);
     margin-bottom: var(--space-xl);
 }
-
-
-
 
 .card h3 {
     font-size: var(--text-xl);
@@ -339,30 +338,32 @@ body.dark .text-overlay {
 
 .card p {
     font-size: var(--text-sm);
-    line-height: 1.4;
+    line-height: 1.6;
     color: var(--text-muted);
+    margin-bottom: var(--space-sm);
 }
 
 .icon {
     font-size: var(--text-3xl);
     color: var(--accent-color);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
 }
 
 .card:hover {
-    transform: translateY(-0.3125rem); /* -5px */
-    box-shadow: 0 0.375rem 0.75rem var(--shadow-color);
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.5rem 1rem var(--shadow-color);
 }
 
-.grid:hover .card {
-    opacity: 0.5;
+@media (min-width: 768px) {
+    .card {
+        padding: var(--space-xl);
+    }
+    .card p {
+        font-size: var(--text-base);
+    }
 }
 
-.grid:hover .card:hover {
-    opacity: 1;
-}
-
-/* Fortschritt Section */
+/* Fortschritt Section - Improved */
 .fortschritt-container {
     padding: var(--space-lg);
     text-align: center;
@@ -370,45 +371,49 @@ body.dark .text-overlay {
     position: relative;
     z-index: 1;
     margin-top: var(--space-lg);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #fortschritt-buttons {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    align-items: stretch;
-    margin-top: var(--space-lg);
+    align-items: center;
+    margin: var(--space-lg) auto 0;
+    width: 100%;
+    max-width: 1700px;
+    padding: 0 var(--space-md);
 }
 
 #fortschritt-buttons button {
     background-color: var(--nav-color);
     color: var(--text-color);
     border: none;
-    padding: var(--space-md) var(--space-xl);
-    font-size: var(--text-lg);
-    border-radius: 0.5rem; /* 8px */
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-base);
+    border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color var(--transition-normal), 
-                transform var(--transition-fast), 
-                box-shadow var(--transition-normal);
-    box-shadow: 0 0.25rem 0.375rem var(--shadow-color);
+    transition: all var(--transition-normal);
+    box-shadow: 0 2px 4px var(--shadow-color);
     width: 100%;
+    max-width: 1700px;
     text-align: center;
 }
 
 #fortschritt-buttons button:hover {
     background-color: #1e3a50;
-    transform: translateY(-0.125rem); /* -2px */
-    box-shadow: 0 0.375rem 0.5rem var(--shadow-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 #fortschritt-buttons button:active {
     transform: translateY(0);
-    box-shadow: 0 0.25rem 0.375rem var(--shadow-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 /* ===== Responsive Styles ===== */
-@media (max-width: 49.375rem) { /* 790px */
+@media (max-width: 790px) {
     nav .nav-bar .sidebarOpen {
         display: block;
     }
@@ -416,7 +421,7 @@ body.dark .text-overlay {
     .menu {
         position: fixed;
         height: 100%;
-        width: 20rem; /* 320px */
+        width: 20rem;
         left: -100%;
         top: 0;
         padding: var(--space-lg);
@@ -433,7 +438,6 @@ body.dark .text-overlay {
         opacity: 0;
         transition: opacity var(--transition-normal);
     }
-    
 
     .menu .logo-toggle {
         display: block;
@@ -449,18 +453,25 @@ body.dark .text-overlay {
         cursor: pointer;
     }
 
-    .nav-bar .nav-links {
-        flex-direction: column;
-        padding-top: var(--space-xl);
-    }
+   .nav-bar .nav-links {
+    flex-direction: column;
+}
 
-    .nav-links li a {
-        display: block;
-        margin-top: var(--space-lg);
-    }
+.nav-links li {
+    width: 100%; /* Ensures <li> stretches full width */
+    padding: 5px 0; /* Adds space between li items */
+}
+
+.nav-links li a {
+    display: block;
+    width: 80%;
+    margin-left:50px ;
+    padding: 10px; /* Padding instead of margin */
+    text-align: left;
+}
     
     .grid {
-        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* 250px */
+        grid-template-columns: 1fr;
         height: auto;
     }
     
@@ -469,6 +480,33 @@ body.dark .text-overlay {
     }
     
     .fortschritt-container {
-        margin-top: 60vh;
+        margin-top: 2vh;
+        padding: var(--space-md);
+    }
+    
+    #fortschritt-buttons {
+        gap: var(--space-sm);
+        padding: 0 var(--space-sm);
+    }
+    
+    #fortschritt-buttons button {
+        padding: var(--space-sm) var(--space-md);
+        font-size: var(--text-sm);
+        max-width: 100%;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+    #fortschritt-buttons button {
+        padding: var(--space-sm);
+    }
+    
+    .text-overlay {
+        padding: var(--space-md);
+    }
+    
+    .text-overlay h1 {
+        font-size: var(--text-2xl);
     }
 }
