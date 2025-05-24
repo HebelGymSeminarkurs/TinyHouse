@@ -1,0 +1,553 @@
+/* ===== Google Font Import - Poppins ===== 
+@import url('../Font/googleapis.css');
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;
+    ;
+}
+
+  
+/* ===== Colours ===== */
+:root {
+    --body-color: #E4E9F7;
+    --nav-color: #112836;
+    --side-nav: #010718;
+    --text-color: #FFF;
+}
+
+body{
+    background-color: var(--body-color);
+}
+
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+
+body.dark {
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+
+body.dark nav {
+    border: 1px solid #393838;
+
+}
+
+nav .nav-bar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle {
+    display: none;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+
+.dark-light
+{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i {
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+.home-container {
+    position: relative;
+    width: 100%; /* Ensure the container takes the full width */
+    height: 100vh; /* Make the container full viewport height */
+}
+  
+.home-container img {
+    position: absolute;
+    top: 0; /* Align the image to the top */
+    width: 100%; /* Ensure the image takes the full width of the container */
+    height: 100%; /* Cover the full height of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%; /* Move the element to the center vertically */
+    left: 50%; /* Move the element to the center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half its own width and height */
+    width: 90%; /* Adjust the width of the text overlay */
+    max-width: 1200px; /* Limit the maximum width for better readability */
+    color: white; /* Text color */
+    font-size: 18px; /* Text size */
+    text-align: center; /* Center the text */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.text-overlay h1 {
+    font-size: 25px; /* Larger font size for the heading */
+    margin-bottom: 12px; /* Add space below the heading */
+}
+
+.text-overlay p {
+    margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+
+
+/*  Scroll Down Arrow */
+.indicator {
+    position: absolute; /* Use absolute positioning */
+    bottom: 50px; /* Place it near the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%) rotate(45deg); /* Center the element and rotate */
+    width: 25px;
+    height: 25px;
+  }
+  
+  .indicator span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 3px solid #eb1a1a;
+    border-right: 3px solid #eb1a1a;
+    animation: animate 1s linear infinite;
+  }
+  
+  .indicator span:nth-child(1) {
+    top: -30px;
+    left: -30px;
+    animation-delay: 0s;
+  }
+  
+  .indicator span:nth-child(2) {
+    top: -15px;
+    left: -15px;
+    animation-delay: 0.2s;
+  }
+  
+  .indicator span:nth-child(3) {
+    top: 0;
+    left: 0;
+    animation-delay: 0.4s;
+  }
+  
+
+  
+  @keyframes animate {
+    0% {
+      border-color: #eb1a1a;
+      transform: translate(0, 0);
+    }
+    20% {
+      border-color: #eb1a1a;
+      transform: translate(15px, 15px);
+    }
+    20.1%, 100% {
+      border-color: #eb1a1a;
+    }
+  }
+
+
+  .Aktuell {
+    max-width: 100%;
+    height: 90vh;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    height: 100%;
+  }
+  
+  .card {
+    background-color: #1e3a50;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .icon {
+    font-size: 2rem;
+    color: #4fb8e6;
+    margin-bottom: 10px;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .grid:hover .card {
+    opacity: 0.5; /* Dim all cards */
+  }
+  
+  .grid:hover .card:hover {
+    opacity: 1; /* Highlight hovered card */
+  }
+
+
+
+ /* ===== Slider Modal Styles ===== */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Ensure it's on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+  overflow: auto;
+}
+
+.modal-content {
+  position: relative;
+  margin: 5% auto; /* Center the modal vertically */
+  padding: 20px;
+  max-width: 90%; /* Ensure the modal doesn't exceed 90% of the viewport width */
+  width: 90%; /* Allow the modal to take more width */
+  text-align: center;
+  background-color: var(--nav-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff6b6b; /* Change color on hover */
+  text-decoration: none;
+}
+
+#slider-image {
+  max-width: 80%; /* Ensure the image takes 80% of the modal width */
+  max-height: 80vh; /* Ensure the image takes 80% of the viewport height */
+  border-radius: 8px;
+  object-fit: contain; /* Maintain aspect ratio */
+  display: block; /* Ensure proper spacing */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Navigation buttons */
+#prev-button,
+#next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+#prev-button:hover,
+#next-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#prev-button {
+  left: 10px;
+}
+
+#next-button {
+  right: 10px;
+}
+
+/* Fortschritt Section */
+.fortschritt-container {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--body-color);
+  position: relative; /* Ensure proper stacking context */
+  z-index: 1; /* Lower z-index if needed */
+  margin-top: 20px; /* Add spacing to avoid overlap */
+}
+
+#fortschritt-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 15px; /* Add spacing between buttons */
+  align-items: stretch; /* Ensure buttons stretch to full width */
+  margin-top: 20px;
+}
+
+#fortschritt-buttons button {
+  background-color: var(--nav-color);
+  color: var(--text-color);
+  border: none;
+  padding: 15px 30px; /* Adjust padding for better spacing */
+  font-size: 18px; /* Adjust font size */
+  border-radius: 8px; /* Slightly larger border radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  width: 100%; /* Make buttons take the full width of the container */
+  text-align: center; /* Center the text inside the button */
+}
+
+#fortschritt-buttons button:hover {
+  background-color: #1e3a50; /* Darker shade for hover effect */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+#fortschritt-buttons button:active {
+  transform: translateY(0); /* Reset lift effect when clicked */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow when clicked */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu {
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle {
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose {
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a {
+        display: block;
+        margin-top: 20px;
+    }
+ .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    height: auto;
+  }
+  .card {
+    padding: 20px;
+  }
+  .fortschritt-container{
+    margin-top:60vh;
+  }
+
+}

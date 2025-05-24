@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="./Style/style.css">
+
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Tiny House</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo navLogo"><a href="#">Tiny House</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Tiny House</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#Aktuell">Aktuell</a></li>
+                    <li><a href="#Fortschritt">Fortschritt</a></li>
+                    <li><a href="#">Sponsoren</a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="home-container" id="home">
+        <img src="images/Home.webp" alt="Your Image">
+        <div class="text-overlay">
+            <h1>Herzlich Willkommen auf der Website des Seminarkurses am Hebel-Gymnasium!</h1>
+            <p>Wir freuen uns, Sie auf der offiziellen Website unseres Seminarkurses begrüßen zu dürfen. In Kooperation
+                mit Claim for Dignity e.V. widmen wir uns einem besonderen und zukunftsweisenden Projekt: dem Bau eines
+                nachhaltigen Tiny Houses.</p>
+            <br>
+            <p>Erfahren Sie mehr über unsere Ideen, Fortschritte und die inspirierende Zusammenarbeit zwischen
+                Schüler:innen, Lehrer:innen und Expert:innen. Tauchen Sie ein in unseren Projekt!</p>
+            <p>Viel Spaß beim Entdecken!</p>
+            <br>
+            <p>Ihr Seminarkurs-Team des Hebel-Gymnasiums</p>
+        </div>
+
+        <!-- Scroll Down Arrow -->
+        <div class="indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+    </div>
+
+
+
+    <div class="Aktuell" id="Aktuell">
+        <h1>Tiny House V Projekt: Aktueller Stand</h1>
+        <div class="grid">
+          <div class="card">
+            <div class="icon">🏠</div>
+            <h3>Architektur</h3>
+            <p>Gjon Radovani führt Schülergruppe in Mini-Bibliothek-Bau ein.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📚</div>
+            <h3>Bibliothekskonzept</h3>
+            <p>Entwicklung mobiler Lernplattformen mit Stadtbibliothek Pforzheim.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Haustechnik</h3>
+            <p>Planung von Energie-, Wasser- und Abwassersystemen.</p>
+          </div>
+          <div class="card">
+            <div class="icon">📢</div>
+            <h3>Marketing</h3>
+            <p>Professionelles Sponsoring und Online-Plattform für das Projekt.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🖋️</div>
+            <h3>Soziale Einrichtung</h3>
+            <p>Mobile Hilfsangebote für Obdachlose in Pforzheim.</p>
+          </div>
+          <div class="card">
+            <div class="icon">☎️</div>
+            <h3>Finanzierung</h3>
+            <p>Abstimmung mit Sponsoren für Projektfinanzierung.</p>
+          </div>
+        </div>
+      </div>
+
+
+       <!-- Fortschritt Section -->
+    <div class="fortschritt-container" id="Fortschritt">
+      <h1>Fortschritt</h1>
+      <div id="fortschritt-buttons"></div>
+  </div>
+
+  <!-- Slider Modal -->
+  <div id="slider-modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <img id="slider-image" src="" alt="Slider Image">
+          <button id="prev-button"><<</button>
+          <button id="next-button">>></button>
+      </div>
+  </div>
+
+
+    <script src="./Script/script.js"></script>
+
+</body>
+
+</html>
