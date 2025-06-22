@@ -364,7 +364,7 @@ body.dark .text-overlay {
 }
 
 /* Fortschritt Section - Improved */
-.fortschritt-container {
+.Fortschritt-container {
     padding: var(--space-lg);
     text-align: center;
     background-color: var(--body-color);
@@ -479,7 +479,7 @@ body.dark .text-overlay {
         padding: var(--space-lg);
     }
     
-    .fortschritt-container {
+    .Fortschritt-container {
         margin-top: 2vh;
         padding: var(--space-md);
     }
@@ -495,6 +495,90 @@ body.dark .text-overlay {
         max-width: 100%;
     }
 }
+.Sponsoren {
+    width: 100%;
+    max-width: 1700px;
+    margin: var(--space-xl) auto;
+    padding: var(--space-xl) var(--space-lg);
+    background-color: var(--body-color);
+    color: var(--text-dark);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body.dark .Sponsoren {
+    background-color: var(--side-nav);
+    color: var(--text-color);
+}
+
+.Sponsoren h1, .Sponsoren h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-md);
+}
+
+.Sponsoren p {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+}
+
+/* Container for cards */
+#sponsoren-daten {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-lg);
+}
+
+/* Sponsor & Button as Card */
+.sponsor-card {
+    background-color: var(--nav-color);
+    color: var(--text-color);
+    padding: var(--space-md);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), background-color var(--transition-normal), color var(--transition-normal);
+    font-weight: 500;
+    font-size: var(--text-base);
+    text-align: center;
+    cursor: default;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 6px 10px var(--shadow-color);
+    background-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+/* Make donation card interactive */
+.sponsor-card[role="button"] {
+    cursor: pointer;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-weight: 500;
+    margin-top: var(--space-md);
+}
+
+#dank{
+    margin-top: 50px;
+}
+@media (max-width: 1024px) {
+    #sponsoren-daten {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #sponsoren-daten {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 
 /* Very small devices */
 @media (max-width: 400px) {

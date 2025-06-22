@@ -2,119 +2,145 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://kit.fontawesome.com/f5e251485b.js" crossorigin="anonymous"></script>
-    <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="./Style/style.css">
-    <!-- ===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Tiny House</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/f5e251485b.js" crossorigin="anonymous"></script>
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="./Style/style.css">
+  <!-- ===== Boxicons CSS ===== -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- ===== SweetAlert2  ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>Tiny House</title>
 </head>
 
 <body>
-    <nav>
-        <div class="nav-bar">
-            <i class='bx bx-menu sidebarOpen'></i>
-            <span class="logo navLogo">
-              <a href="#">
-                <img src="images/icon.png" alt="">
-              </a>
-            </span>
+  <nav>
+    <div class="nav-bar">
+      <i class='bx bx-menu sidebarOpen'></i>
+      <span class="logo navLogo">
+        <a href="#">
+          <img src="images/icon.png" alt="">
+        </a>
+      </span>
 
-            <div class="menu">
-                <div class="logo-toggle">
-                    <i class='bx bx-x siderbarClose'></i>
-                </div>
-
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#Aktuell">Aktuell</a></li>
-                    <li><a href="#Fortschritt">Fortschritt</a></li>
-                    <li><a href="#">Sponsoren</a></li>
-                    <li><a href="https://www.instagram.com/hebel.live24/#"> <i class="fab fa-instagram"></i></i> Instagram </a></li>
-                    <li><a href="https://hebel-pf.de/"><i class="fas fa-graduation-cap"></i> Website</a></li>
-                </ul>
-            </div>
-
-            <div class="darkLight-searchBox">
-                <div class="dark-light">
-                    <i class='bx bx-moon moon'></i>
-                    <i class='bx bx-sun sun'></i>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
-    <div class="home-container" id="home">
-        <img src="images/Home.webp" alt="Your Image">
-        <div class="text-overlay">
-            <h1>Herzlich Willkommen auf der Website des Seminarkurses am Hebel-Gymnasium!</h1>
-            <p>Wir freuen uns, Sie auf der offiziellen Website unseres Seminarkurses begrüßen zu dürfen. In Kooperation
-                mit Claim for Dignity e.V. widmen wir uns einem besonderen und zukunftsweisenden Projekt: dem Bau eines
-                nachhaltigen Tiny Houses.</p>
-            <br>
-            <p>Erfahren Sie mehr über unsere Ideen, Fortschritte und die inspirierende Zusammenarbeit zwischen
-                Schüler:innen, Lehrer:innen und Expert:innen. Tauchen Sie ein in unseren Projekt!</p>
-            <p>Viel Spaß beim Entdecken!</p>
-            <br>
-            <p>Ihr Seminarkurs-Team des Hebel-Gymnasiums</p>
+      <div class="menu">
+        <div class="logo-toggle">
+          <i class='bx bx-x siderbarClose'></i>
         </div>
 
-        <!-- Scroll Down Arrow -->
-        <div class="indicator">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-    </div>
-
-
-
-    <div class="Aktuell" id="Aktuell">
-        <h1>Tiny House V Projekt: Aktueller Stand</h1>
-        <div class="grid">
-          <div class="card">
-            <div class="icon">🏠</div>
-            <h3>Architektur</h3>
-            <p>Unter der Leitung von Gjon Radovani übernimmt eine Schülergruppe die Planung und den Bau einer Mini-Bibliothek. Ziel ist es, praktische Erfahrungen im Bereich Architektur zu sammeln und ein reales, funktionales Bauprojekt umzusetzen. Dabei stehen Kreativität, Teamarbeit und handwerkliches Können im Mittelpunkt.</p>
-          </div>
-          <div class="card">
-            <div class="icon">📚</div>
-            <h3>Bibliothekskonzept</h3>
-            <p>In Zusammenarbeit mit der Stadtbibliothek Pforzheim wird ein innovatives Konzept für mobile Lernplattformen entwickelt. Der Fokus liegt auf digitaler Bildung und der Förderung von niederschwelligen, mobilen Zugängen zu Wissen und Literatur – insbesondere für Kinder und Jugendliche.</p>
-          </div>
-          <div class="card">
-            <div class="icon">⚡</div>
-            <h3>Haustechnik</h3>
-            <p>Dieses Modul beschäftigt sich mit der technischen Planung rund um Energieversorgung, Wasseranschluss sowie Abwasserentsorgung. Die Teilnehmer entwickeln nachhaltige und ressourcenschonende Lösungen für die Haustechnik der Mini-Bibliothek und setzen sich mit wichtigen Fragen der Umwelttechnik auseinander.</p>
-          </div>
-          <div class="card">
-            <div class="icon">📢</div>
-            <h3>Marketing</h3>
-            <p>Für die erfolgreiche Außenwirkung des Projekts wird ein professionelles Marketingkonzept erarbeitet. Dazu gehören das Einwerben von Sponsoren, die Entwicklung einer Online-Plattform sowie die gezielte Öffentlichkeitsarbeit. Ziel ist es, eine breite Unterstützung und Sichtbarkeit in der Region zu erreichen.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🖋️</div>
-            <h3>Soziale Einrichtung</h3>
-            <p>Ein sozial ausgerichteter Teil des Projekts widmet sich mobilen Hilfsangeboten für obdachlose Menschen in Pforzheim. Dieser Bereich fördert das soziale Engagement der Beteiligten und stellt den direkten Bezug zu aktuellen gesellschaftlichen Herausforderungen her..</p>
-          </div>
-          <div class="card">
-            <div class="icon">☎️</div>
-            <h3>Finanzierung</h3>
-            <p>Hier liegt der Schwerpunkt auf der finanziellen Realisierung des Gesamtprojekts. In enger Abstimmung mit Sponsoren und Unterstützern werden Finanzierungsmodelle entwickelt, um das Vorhaben langfristig und nachhaltig zu sichern. Auch betriebswirtschaftliches Denken und strategische Planung werden vermittelt.</p>
-          </div>
-        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#Aktuell">Aktuell</a></li>
+          <li><a href="#Fortschritt">Fortschritt</a></li>
+          <li><a href="#sponsoren">Sponsoren</a></li>
+          <li><a href="https://www.instagram.com/hebel.live24/#"> <i class="fab fa-instagram"></i></i> Instagram </a>
+          </li>
+          <li><a href="https://hebel-pf.de/"><i class="fas fa-graduation-cap"></i> Website</a></li>
+        </ul>
       </div>
 
-       <!-- Fortschritt Section -->
-    <div class="fortschritt-container" id="Fortschritt">
-      <h1>Fortschritt</h1>
-      <div id="fortschritt-buttons"></div>
+      <div class="darkLight-searchBox">
+        <div class="dark-light">
+          <i class='bx bx-moon moon'></i>
+          <i class='bx bx-sun sun'></i>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="home-container" id="home">
+    <img src="images/Home.webp" alt="Your Image">
+    <div class="text-overlay">
+      <h1>Herzlich Willkommen auf der Website des Seminarkurses am Hebel-Gymnasium!</h1>
+      <p>Wir freuen uns, Sie auf der offiziellen Website unseres Seminarkurses begrüßen zu dürfen. In Kooperation
+        mit Claim for Dignity e.V. widmen wir uns einem besonderen und zukunftsweisenden Projekt: dem Bau eines
+        nachhaltigen Tiny Houses.</p>
+      <br>
+      <p>Erfahren Sie mehr über unsere Ideen, Fortschritte und die inspirierende Zusammenarbeit zwischen
+        Schüler:innen, Lehrer:innen und Expert:innen. Tauchen Sie ein in unseren Projekt!</p>
+      <p>Viel Spaß beim Entdecken!</p>
+      <br>
+      <p>Ihr Seminarkurs-Team des Hebel-Gymnasiums</p>
+    </div>
+
+    <!-- Scroll Down Arrow -->
+    <div class="indicator">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
-    <script src="./Script/script.js"></script>
+
+  <div class="Aktuell" id="Aktuell">
+    <h1>Tiny House V Projekt: Aktueller Stand</h1>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><i class="fas fa-user-edit"></i></div>
+        <h3>Architektur</h3>
+        <p>Unter der Leitung von Gjon Radovani übernimmt eine Schülergruppe die Planung und den Bau einer
+          Mini-Bibliothek. Ziel ist es, praktische Erfahrungen im Bereich Architektur zu sammeln und ein reales,
+          funktionales Bauprojekt umzusetzen. Dabei stehen Kreativität, Teamarbeit und handwerkliches Können im
+          Mittelpunkt.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="fas fa-book"></i></div>
+        <h3>Bibliothekskonzept</h3>
+        <p>In Zusammenarbeit mit der Stadtbibliothek Pforzheim wird ein innovatives Konzept für mobile Lernplattformen
+          entwickelt. Der Fokus liegt auf digitaler Bildung und der Förderung von niederschwelligen, mobilen Zugängen zu
+          Wissen und Literatur – insbesondere für Kinder und Jugendliche.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Haustechnik</h3>
+        <p>Dieses Modul beschäftigt sich mit der technischen Planung rund um Energieversorgung, Wasseranschluss sowie
+          Abwasserentsorgung. Die Teilnehmer entwickeln nachhaltige und ressourcenschonende Lösungen für die Haustechnik
+          der Mini-Bibliothek und setzen sich mit wichtigen Fragen der Umwelttechnik auseinander.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📢</div>
+        <h3>Marketing</h3>
+        <p>Für die erfolgreiche Außenwirkung des Projekts wird ein professionelles Marketingkonzept erarbeitet. Dazu
+          gehören das Einwerben von Sponsoren, die Entwicklung einer Online-Plattform sowie die gezielte
+          Öffentlichkeitsarbeit. Ziel ist es, eine breite Unterstützung und Sichtbarkeit in der Region zu erreichen.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🖋️</div>
+        <h3>Soziale Einrichtung</h3>
+        <p>Ein sozial ausgerichteter Teil des Projekts widmet sich mobilen Hilfsangeboten für obdachlose Menschen in
+          Pforzheim. Dieser Bereich fördert das soziale Engagement der Beteiligten und stellt den direkten Bezug zu
+          aktuellen gesellschaftlichen Herausforderungen her..</p>
+      </div>
+      <div class="card">
+        <div class="icon">☎️</div>
+        <h3>Finanzierung</h3>
+        <p>Hier liegt der Schwerpunkt auf der finanziellen Realisierung des Gesamtprojekts. In enger Abstimmung mit
+          Sponsoren und Unterstützern werden Finanzierungsmodelle entwickelt, um das Vorhaben langfristig und nachhaltig
+          zu sichern. Auch betriebswirtschaftliches Denken und strategische Planung werden vermittelt.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Fortschritt Section -->
+  <div class="Fortschritt-container" id="Fortschritt">
+    <h1>Fortschritt</h1>
+    <div id="fortschritt-buttons"></div>
+  </div>
+
+ <div class="Sponsoren" id="sponsoren">
+  <h1>Herzlichen Dank an unsere Unterstützer!</h1>
+  <p>Wir möchten uns von Herzen bei unseren bisherigen Sponsoren bedanken, die unsere Arbeit mit ihrem Engagement und ihrer Großzügigkeit ermöglichen.</p>
+  <p>Ihr Beitrag macht einen echten Unterschied und hilft uns dabei, unsere Projekte voranzutreiben und unsere Ziele zu erreichen.</p>
+  <p>Um weiterhin wachsen und noch mehr bewirken zu können, sind wir auf weitere Unterstützung angewiesen. Werden auch Sie Teil unserer Sponsoren und helfen Sie mit, unsere Vision in die Tat umzusetzen! Jede Spende, ob groß oder klein, zählt.</p>
+
+  <div id="sponsoren-daten"></div>
+
+  <p id="dank">Vielen Dank für Ihre Unterstützung! Gemeinsam schaffen wir mehr.</p>
+</div>
+
+
+  <script src="./Script/script.js"></script>
 
 </body>
 
