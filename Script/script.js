@@ -89,7 +89,7 @@ fetch('./Config/TinyHouse.json')
         }
     });
 
-    fetch('Data/Sponsoren/data.json')
+    fetch('./Data/Sponsoren/data.json')
     .then(response => {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         return response.json();
