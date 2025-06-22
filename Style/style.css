@@ -682,7 +682,11 @@ body.dark .site-footer {
 /* Mobile Phones */
 @media (max-width: 600px) {
     .nav-bar {
-        padding: 0 var(--space-sm);
+        padding: 1 var(--space-sm);
+    }
+
+    .nav-bar .nav-links li {
+        margin-left: 50px    
     }
     
     .text-overlay {
